@@ -1,0 +1,278 @@
+
+.product-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.product-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-main-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-thumbnails {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.product-thumb {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.2s ease-in-out;
+}
+
+.product-thumb:hover {
+  border: 2px solid #000;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.product-description {
+  font-size: 0.8rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+/* Heart icon */
+.wishlist-icon {
+  color: #000;
+  font-size: 1.3rem;
+  margin-right: 10px;
+}
+.product-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.wishlist-actions {
+  display: flex;
+  align-items: center;
+  /* gap: 1rem;
+  margin-top: 1rem; */
+}
+
+.qty-input {
+  width: 60px;
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.btn-cart {
+  background-color: #ebe7df; /* Yellow */
+  color: #000;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 330px;
+}
+
+.btn-cart:hover {
+  background-color: #c7c1b9;
+}
+
+.btn-wishlist {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.btn1-wishlist {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 30%;
+}
+
+
+.wish-link{
+  text-decoration: none ;
+  color: #5e5e5e;
+}
+.in-wishlist:hover{
+  text-decoration: underline;
+
+}
+
+.btn-wishlist:hover {
+  color: #000;
+}
+
+.btn-paypal {
+  margin-top: 1.5rem;
+  background-color: #ffc439; /* PayPal Yellow */
+  color: #111;
+  font-weight: bold;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-paypal:hover {
+  background-color: #ffb100;
+}
+ button.primary {
+    background-color: #EC9706;
+  }
+.product-meta {
+  margin-top: 0.8rem;
+  color: #333;
+}
+
+.product-meta span {
+  font-weight: bold;
+}
+.product-meta p {
+  margin-bottom: 1.2rem;
+}
+
+.product-not-found {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Product Extra Sections ===== */
+/* ===== Product Extra Sections ===== */
+
+.product-extra {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 1px solid #eee;
+}
+
+.product-extra h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-weight: 600;
+  border-bottom: 2px solid #ff5a5f;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+/* --- Description --- */
+.product-description-long {
+  font-size: 0.7rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+/* Features List */
+.features-list {
+  list-style: disc;
+  margin-left: 20px;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Product Cards Section */
+.product-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.card {
+  flex: 0 0 200px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card h4 {
+  font-size: 14px;
+  margin: 10px 0 5px;
+  color: #222;
+}
+
+.card p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.card button {
+  padding: 6px 10px;
+  border: none;
+  background: #ff4b6e;
+  color: #fff;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.card button:hover {
+  background: #e63d61;
+}
