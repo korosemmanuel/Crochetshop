@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import datetime from "node-datetime";
-import axios from "axios";
+import API from "../api"; // adjust the path if needed
+
 // import Order from '../models/orderModel.js'; // Assuming you have an Order model
 
 dotenv.config();
@@ -33,7 +34,7 @@ export const token = async (req, res, next) => {
 
     const headers = { Authorization: auth };
 
-    const response = await axios.get(url, { headers });
+    const response = await API.get(url, { headers });
     req.token = response.data.access_token;
     next();
   } catch (error) {
@@ -84,7 +85,7 @@ export const stkPush = async (req, res) => {
       Authorization: `Bearer ${req.token}`,
     };
 
-    const response = await axios.post(stkURL, data, { headers });
+    const response = await API.post(stkURL, data, { headers });
 
     //   // Save the CheckoutRequestID in the order
     //   await Order.findByIdAndUpdate(orderId, {

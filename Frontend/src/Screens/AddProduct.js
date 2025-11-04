@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 function AddProduct() {
+    const apiBase = process.env.REACT_APP_API_URL;
+
   const [form, setForm] = useState({
     title: "",
     description: "",
@@ -15,7 +17,7 @@ function AddProduct() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch("http://localhost:5000/api/products", {
+    await fetch(`${apiBase}/api/products`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),

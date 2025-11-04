@@ -6,7 +6,7 @@ import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 import { useWishlist } from "../WishlistContext";
 import { useCart } from "../CartContext";
-import Axios from "axios";
+import API from "../api"; // adjust the path if needed
 import { Link } from "react-router-dom";
 import "../App.css";
 
@@ -24,7 +24,7 @@ function ProductPage() {
 
   useEffect(() => {
     const getPaypalClientId = async () => {
-      const { data } = await Axios.get("/api/config/paypal");
+      const { data } = await API.get("/api/config/paypal");
       setPaypalClientId(data);
     };
     getPaypalClientId();
@@ -88,8 +88,8 @@ function ProductPage() {
 
     // --- PayPal SDK ---
     const addPayPalScript = async () => {
-      const { data: clientId } = await Axios.get(
-        "http://localhost:5000/api/config/paypal"
+      const { data: clientId } = await API.get(
+        "/api/config/paypal"
       );
       const script = document.createElement("script");
       script.type = "text/javascript";

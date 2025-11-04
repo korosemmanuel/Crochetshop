@@ -41,11 +41,13 @@ function App() {
   const [allProducts, setAllProducts] = useState([]);
 
   useEffect(() => {
+      const apiBase = process.env.REACT_APP_API_URL;
+
     Promise.all([
-      fetch("http://localhost:5000/api/products?type=pattern").then((r) =>
+      fetch(`${apiBase}/api/products?type=pattern`).then((r) =>
         r.json()
       ),
-      fetch("http://localhost:5000/api/products?type=featured").then((r) =>
+      fetch(`${apiBase}/api/products?type=featured`).then((r) =>
         r.json()
       ),
     ]).then(([patterns, featured]) => {
