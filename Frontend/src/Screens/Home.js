@@ -13,13 +13,14 @@ function Home() {
 
   const { toggleWishlist, isInWishlist } = useWishlist();
   const { addToCart, isInCart } = useCart(); // ✅ no searchQuery here
+  const apiBase = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/products?type=pattern")
+    fetch(`${apiBase}/api/products?type=pattern`)
       .then((res) => res.json())
       .then((data) => setPatterns(data.products || []));
 
-    fetch("http://localhost:5000/api/products?type=featured")
+    fetch(`${apiBase}/api/products?type=featured`)
       .then((res) => res.json())
       .then((data) => setFeatured(data.products || []));
   }, []);

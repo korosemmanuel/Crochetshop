@@ -15,10 +15,11 @@ function Patterns() {
   const { addToCart, isInCart } = useCart(); // ✅ synced with readyToWear.js
   const { toggleWishlist, isInWishlist } = useWishlist();
   const PRODUCTS_PER_PAGE = 6;
+  const apiBase = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/api/products?type=pattern&page=${page}&limit=${PRODUCTS_PER_PAGE}`
+      `${apiBase}/api/products?type=pattern&page=${page}&limit=${PRODUCTS_PER_PAGE}`
     )
       .then((res) => res.json())
       .then((data) => {

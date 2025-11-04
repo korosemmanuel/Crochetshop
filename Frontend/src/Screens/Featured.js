@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 
 function Feature() {
   const [products, setProducts] = useState([]);
+  const apiBase = process.env.REACT_APP_API_URL;
+
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/products")
+    fetch(`${apiBase}/api/products`)
       .then((res) => res.json())
       .then((data) =>
         setProducts(data.filter((p) => p.category === "feature"))
